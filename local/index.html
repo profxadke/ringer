@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ringer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="style.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    <button onclick="ring()">Ring</button>
+    <script>
+      function ring() {
+        const sound = new Audio("../tone.mp3");
+        sound.play();
+        sound.addEventListener("ended", ()=>{
+          if ( confirm("Press okay, if you wish to play again.") ){
+            ring();
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
